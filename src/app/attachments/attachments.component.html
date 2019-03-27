@@ -1,0 +1,31 @@
+<!-- this.Attachments[0].name
+     this.Attachments[0].attachmentType
+     this.Attachments[0].isInline
+     this.Attachments[0].size
+     this.Attachments[0].contentType
+     this.Attachments[0].id 
+
+<table>
+    <tr>Name</tr>
+    <tr *ngFor="let att of CurrentItem.attachments">
+        <td>{{ att.name }}</td>
+    </tr>
+</table>
+
+-->
+
+<table class="ms-Table">
+    <tr class="ms-Table-row">
+        <td class="ms-Table-rowCheck"></td>
+        <td class="ms-Table-cell">File name</td>
+        <td class="ms-Table-cell" colspan="2">Size</td>
+        <td class="ms-Table-cell">Type</td>
+    </tr>
+    <tr class="ms-Table-row" *ngFor="let att of CurrentItem.attachments">
+        <td class="ms-Table-rowCheck"></td>
+        <td class="ms-Table-cell">{{att.name}}</td>
+        <td class="ms-Table-cell">{{att.size}}</td>
+        <td class="ms-Table-cell">{{att.attachmentType}}</td>
+        <td class="ms-Table-cell">{{att.contentType}}</td>
+    </tr>
+</table>

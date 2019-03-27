@@ -1,0 +1,13 @@
+table{
+    border-collapse: separate;
+    border-spacing: 0px;
+  }
+  
+  tr:hover{
+      background-color: #f4f4f4;
+      cursor: pointer;
+      outline: transparent solid 1px
+  }
+  td{
+    background-color: transparent;
+  }

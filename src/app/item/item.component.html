@@ -1,0 +1,37 @@
+<div class="ms-Grid-row">
+    <div class="ms-Grid-col ms-u-sm12">
+        <h2 class="ms-font-l">Office.context.mailbox.Item properties</h2>
+        <div class="ms-Table">
+            <div class="ms-Table-row">
+                <span class="ms-Table-cell">Property</span>
+                <span class="ms-Table-cell">Value</span>
+            </div>
+            <div class="ms-Table-row">
+                <span class="ms-Table-cell ms-fontWeight-semibold">dateTimeCreated</span>
+                <span id="dateTimeCreated" class="ms-Table-cell">{{ CurrentItem.dateTimeCreated | date:'dd-MM-yyyy HH:mm' }}</span>
+            </div>
+            <div class="ms-Table-row">
+                <span class="ms-Table-cell ms-fontWeight-semibold">dateTimeModified</span>
+                <span id="dateTimeModified" class="ms-Table-cell">{{ CurrentItem.dateTimeModified | date:'dd-MM-yyyy HH:mm' }}</span>
+            </div>
+            <div class="ms-Table-row">
+                <span class="ms-Table-cell ms-fontWeight-semibold">
+                    itemClass
+                    <i class="ms-Icon ms-Icon--Copy" aria-hidden="true" (click)="Utils.copyMessage(CurrentItem.itemClass)"></i>
+                </span>
+                <span id="itemClass" class="ms-Table-cell">{{ CurrentItem.itemClass}}</span>
+            </div>
+            <div class="ms-Table-row">
+                <span class="ms-Table-cell ms-fontWeight-semibold">
+                    itemId
+                    <i class="ms-Icon ms-Icon--Copy" aria-hidden="true" (click)="Utils.copyMessage(CurrentItem.itemId)"></i>
+                </span>
+                <span id="itemId" class="ms-Table-cell">{{ CurrentItem.itemId}}</span>
+            </div>
+            <div class="ms-Table-row">
+                <span class="ms-Table-cell ms-fontWeight-semibold">itemType</span>
+                <span id="itemType" class="ms-Table-cell">{{ CurrentItem.itemType}}</span>
+            </div>
+        </div>
+    </div>
+</div>

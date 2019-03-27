@@ -1,0 +1,117 @@
+<div class="ms-Grid-row">
+    <div id="appointment-props" class="ms-Grid-row ">
+        <div class="ms-Grid-col ms-u-sm12">
+            <h2 class="ms-font-l">Other properties/Methods</h2>
+            <div class="ms-Table">
+                <div class="ms-Table-row">
+                    <span class="ms-Table-cell">Property</span>
+                    <span class="ms-Table-cell">Value</span>
+                </div>
+                <div class="ms-Table-row">
+                    <span class="ms-Table-cell ms-fontWeight-semibold">
+                        ewsUrl
+                        <i class="ms-Icon ms-Icon--Copy" aria-hidden="true" (click)="copyMessage(GetewsUrl())"></i>
+                    </span>
+                    <span class="ms-Table-cell">
+                        {{ GetewsUrl() }}
+                        <!-- {{ Office.context.mailbox.ewsUrl }} -->
+                    </span>
+                </div>
+                <div class="ms-Table-row">
+                    <span class="ms-Table-cell ms-fontWeight-semibold">
+                        restUrl
+                        <i class="ms-Icon ms-Icon--Copy" aria-hidden="true" (click)="copyMessage(GetRestUrl())"></i>
+                    </span>
+                    <span class="ms-Table-cell">
+                        {{ GetRestUrl() }}
+                        <!-- {{ Office.context.mailbox.restUrl }} -->
+                    </span>
+                </div>
+                <div class="ms-Table-row">
+                    <span class="ms-Table-cell ms-fontWeight-semibold">
+                        convertToRestId
+                        <i class="ms-Icon ms-Icon--Copy" aria-hidden="true" (click)="copyMessage(GetRestId())"></i>
+                        
+                        <select [(ngModel)]="SelectedGetRestTypeIndex" (change)="onChange($event)" id="rest" name="rest">
+                            <option *ngFor="let rest of GetRestType" [value]="rest.id">{{ rest.name }}</option>
+                        </select>
+                    </span>
+                    <span class="ms-Table-cell">
+                        {{ RestId }}
+                        <!-- {{ Office.context.mailbox.convertToRestId( Office.context.mailbox.item.itemId, Office.MailboxEnums.RestVersion.Beta ) }} -->
+                    </span>
+                </div>
+                <div class="ms-Table-row">
+                    <span class="ms-Table-cell ms-fontWeight-semibold">convertToUtcClientTime</span>
+                    <span class="ms-Table-cell"></span>
+                </div>
+                <div class="ms-Table-row">
+                    <span class="ms-Table-cell ms-fontWeight-semibold">displayAppointmentForm</span>
+                    <span class="ms-Table-cell">
+                        <button class="ms-Button ms-Button--small" (click)="displayMessageForm()">
+                            <!-- <span class="ms-Button-icon"><i class="ms-Icon ms-Icon--Add"></i></span> -->
+                            <span class="ms-Button-label">Display Current Message Form</span>
+                        </button>
+                    </span>
+                </div>
+                <div class="ms-Table-row">
+                    <span class="ms-Table-cell ms-fontWeight-semibold">displayMessageForm</span>
+                    <span class="ms-Table-cell">
+                        <button class="ms-Button ms-Button--small" (click)="displayMessageForm()">
+                            <!-- <span class="ms-Button-icon"><i class="ms-Icon ms-Icon--Add"></i></span> -->
+                            <span class="ms-Button-label">Current Message Form</span>
+                        </button>
+                    </span>
+                </div>
+                <div class="ms-Table-row">
+                    <span class="ms-Table-cell ms-fontWeight-semibold">displayNewAppointmentForm</span>
+                    <span class="ms-Table-cell">
+                        <button class="ms-Button ms-Button--small" (click)="displayNewAppointment()">
+                            <span class="ms-Button-icon"><i class="ms-Icon ms-Icon--Add"></i></span>
+                            <span class="ms-Button-label">New Appointment</span>
+                        </button>
+                    </span>
+                </div>
+                <div class="ms-Table-row">
+                    <span class="ms-Table-cell ms-fontWeight-semibold">displayNewMessageForm</span>
+                    <span class="ms-Table-cell">
+                        <button class="ms-Button ms-Button--small" (click)="displayNewMessageForm()">
+                            <!-- <span class="ms-Button-icon"><i class="ms-Icon ms-Icon--Add"></i></span> -->
+                            <span class="ms-Button-label">New Message Form</span>
+                        </button>
+                    </span>
+                </div>
+                <div class="ms-Table-row">
+                    <span class="ms-Table-cell ms-fontWeight-semibold">getCallbackTokenAsync</span>
+                    <span class="ms-Table-cell"></span>
+                </div>
+                <div class="ms-Table-row">
+                    <span class="ms-Table-cell ms-fontWeight-semibold">getUserIdentityTokenAsync</span>
+                    <span class="ms-Table-cell"></span>
+                </div>
+                <div class="ms-Table-row">
+                    <span class="ms-Table-cell ms-fontWeight-semibold">makeEwsRequestAsync</span>
+                    <span class="ms-Table-cell"></span>
+                </div>
+                <div class="ms-Table-row">
+                        <span class="ms-Table-cell ms-fontWeight-semibold">SetFormattedBody(Ahmad)</span>
+                        <span class="ms-Table-cell">
+                                <button class="ms-Button ms-Button--small" (click)="SetFormattedBody()">
+                                        <!-- <span class="ms-Button-icon"><i class="ms-Icon ms-Icon--Add"></i></span> -->
+                                        <span class="ms-Button-label">Set Formatted Body</span>
+                                </button>
+                        </span>
+                </div>
+                <div class="ms-Table-row">
+                    <span class="ms-Table-cell ms-fontWeight-semibold"></span>
+                    <span class="ms-Table-cell"></span>
+                </div>
+                <div class="ms-Table-row">
+                    <span class="ms-Table-cell ms-fontWeight-semibold"></span>
+                    <span class="ms-Table-cell"></span>
+                </div>
+
+            </div>
+        </div>
+    </div>
+</div>

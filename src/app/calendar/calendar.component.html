@@ -1,0 +1,49 @@
+<div class="ms-Grid-row">
+    <div id="appointment-props" class="ms-Grid-row ">
+        <div class="ms-Grid-col ms-u-sm12">
+            <h2 class="ms-font-l">Appointment-specific properties</h2>
+            <div class="ms-Table">
+                <div class="ms-Table-row">
+                    <span class="ms-Table-cell">Property</span>
+                    <span class="ms-Table-cell">Value</span>
+                </div>
+                <div class="ms-Table-row">
+                    <span class="ms-Table-cell ms-fontWeight-semibold">end</span>
+                    <span class="ms-Table-cell">{{ CurrentItem.end  | date:'dd-MM-yyyy HH:mm' }}</span>
+                </div>
+                <div class="ms-Table-row">
+                    <span class="ms-Table-cell ms-fontWeight-semibold">location</span>
+                    <span class="ms-Table-cell">{{ CurrentItem.location }}</span>
+                </div>
+                <div class="ms-Table-row">
+                    <span class="ms-Table-cell ms-fontWeight-semibold">normalizedSubject</span>
+                    <span class="ms-Table-cell">{{ CurrentItem.normalizedSubject }}</span>
+                </div>
+                <div class="ms-Table-row">
+                    <span class="ms-Table-cell ms-fontWeight-semibold">optionalAttendees</span>
+                    <span class="ms-Table-cell">{{ CurrentItem.optionalAttendees }}</span>
+                </div>
+                <div class="ms-Table-row">
+                    <span class="ms-Table-cell ms-fontWeight-semibold">organizer</span>
+                    <span class="ms-Table-cell">{{ CurrentItem.organizer }}</span>
+                </div>
+                <div class="ms-Table-row">
+                    <span class="ms-Table-cell ms-fontWeight-semibold">requiredAttendees</span>
+                    <span class="ms-Table-cell">{{ this.splitArray( CurrentItem.requiredAttendees ) }}</span>
+                </div>
+                <div class="ms-Table-row">
+                    <span class="ms-Table-cell ms-fontWeight-semibold">resources</span>
+                    <span class="ms-Table-cell">{{ CurrentItem.resources }}</span>
+                </div>
+                <div class="ms-Table-row">
+                    <span class="ms-Table-cell ms-fontWeight-semibold">start</span>
+                    <span class="ms-Table-cell">{{ CurrentItem.start  | date:'dd-MM-yyyy HH:mm' }}</span>
+                </div>
+                <div class="ms-Table-row">
+                    <span class="ms-Table-cell ms-fontWeight-semibold">subject</span>
+                    <span class="ms-Table-cell">{{ CurrentItem.subject }}</span>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,48 @@
+<header class="ms-welcome__header ms-bgColor-neutralLighter ms-u-fadeIn500">
+    <!-- <img width="90" height="90" src="../../assets/logo-filled.png" alt="yo-addin" title="yo-addin" /> -->
+    <!-- <h1 class="ms-fontSize-su ms-fontWeight-light ms-fontColor-neutralPrimary">{{welcomeMessage}}</h1> -->
+    <h2 class="ms-font-xl ms-fontWeight-semilight ms-fontColor-neutralPrimary ms-u-slideUpIn20"> {{ AddinTitle  }}</h2>
+    <h3 class="ms-font-xl ms-fontWeight-semilight ms-fontColor-neutralPrimary ms-u-slideUpIn20"> {{ AddinSubTitle  }}
+    </h3>
+</header>
+
+
+<main class="ms-welcome__main">
+
+    <div>
+        <select [(ngModel)]="SelectedOperationIndex" (change)="onChange($event)" id="op" name="op">
+            <option *ngFor="let opt of Operations" [value]="opt.id">{{ opt.name }}</option>
+        </select>
+        <p>
+            Selected operation is: {{ SelectedOperationIndex }}
+        </p>
+    </div>
+
+
+</main>
+
+
+<item *ngIf="SelectedOperationIndex == 1"></item>
+
+<attachments *ngIf="SelectedOperationIndex == 2"></attachments>
+
+<message *ngIf="SelectedOperationIndex == 3"></message>
+
+<calendar *ngIf="SelectedOperationIndex == 4"></calendar>
+
+<userprofile *ngIf="SelectedOperationIndex == 5"></userprofile>
+
+<diagnostics *ngIf="SelectedOperationIndex == 6"></diagnostics>
+
+<other *ngIf="SelectedOperationIndex == 7"></other>
+
+<context *ngIf="SelectedOperationIndex == 8"></context>
+
+<newcase *ngIf="SelectedOperationIndex == 9"></newcase>
+
+<excel *ngIf="SelectedOperationIndex == 10"></excel>
+
+<!-- <button class="ms-Button ms-Button--hero" (click)="run()">
+    <span class="ms-Button-icon"><i class="ms-Icon ms-Icon--Add"></i></span>
+    <span class="ms-Button-label">Create Account</span>
+</button> -->

@@ -1,0 +1,75 @@
+<div class="ms-Grid-row">
+    <div class="ms-Grid-col ms-u-sm12">
+        <h2 class="ms-font-l">Announce New case on Teams</h2>
+        <div class="ms-Table">
+            <div class="ms-Table-row">
+                <span class="ms-Table-cell">.</span>
+                <span class="ms-Table-cell">.</span>
+            </div>
+            <div class="ms-Table-row">
+                <span class="ms-Table-cell ms-fontWeight-semibold">Severity</span>
+                <span class="ms-Table-cell">
+                    <div>
+                        <select [(ngModel)]="Model.CaseSeveritySelectedIndex" id="cs" name="cs">
+                            <option *ngFor="let cs of Model.CaseSeverity" [value]="cs.id">{{ cs.name }}</option>
+                        </select>
+                        <p>
+                            Selected operation is: {{ Model.CaseSeveritySelectedIndex }}
+                        </p>
+                    </div>
+
+                </span>
+            </div>
+            <div class="ms-Table-row">
+                <span class="ms-Table-cell ms-fontWeight-semibold">Case #</span>
+                <span class="ms-Table-cell">
+                    <input [(ngModel)]="Model.CaseNumber"/> {{ Model.CaseNumber }}
+                </span>
+            </div>
+            <div class="ms-Table-row">
+                <span class="ms-Table-cell ms-fontWeight-semibold">Case Title</span>
+                <span class="ms-Table-cell">
+                    <input [(ngModel)]="Model.CaseTitle"/> {{ Model.CaseTitle }}
+                </span>
+            </div>
+            <div class="ms-Table-row">
+                <span class="ms-Table-cell ms-fontWeight-semibold">Case Type</span>
+                <span class="ms-Table-cell">
+                    <div>
+                        <select [(ngModel)]="Model.CaseTypeSelectedIndex" id="ct" name="ct">
+                            <option *ngFor="let ct of Model.CaseType" [value]="ct.id">{{ ct.name }}</option>
+                        </select>
+                        <p>
+                            Selected operation is: {{ Model.CaseTypeSelectedIndex }}
+                        </p>
+                    </div>
+                </span>
+            </div>
+            <div class="ms-Table-row">
+                <span class="ms-Table-cell ms-fontWeight-semibold">Case Source</span>
+                <span class="ms-Table-cell">
+                    <div>
+                        <select [(ngModel)]="Model.CaseSourceSelectedIndex" id="mt" name="mt">
+                            <option *ngFor="let mt of Model.CaseSource" [value]="mt.id">{{ mt.name }}</option>
+                        </select>
+                        <p>
+                            Selected operation is: {{ Model.CaseSourceSelectedIndex }}
+                        </p>
+                    </div>
+                </span>
+            </div>
+            <div class="ms-Table-row">
+                <span class="ms-Table-cell ms-fontWeight-semibold">Text to Push</span>
+                <span class="ms-Table-cell">
+                    <!-- <input [(ngModel)]="Model.TextAnnouncement" /> {{ Model.TextAnnouncement }} -->
+                    <textarea [(ngModel)]="Model.TextAnnouncement" name="ta" cols="40" rows="9"></textarea>
+                </span>
+            </div>
+        </div>
+    </div>
+</div>
+
+<button class="ms-Button ms-Button--hero" (click)="AnnounceOnTeams()">
+    <span class="ms-Button-icon"><i class="ms-Icon ms-Icon--Add"></i></span>
+    <span class="ms-Button-label">Announce to Teams Channel</span>
+</button>
