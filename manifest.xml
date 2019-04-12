@@ -125,12 +125,12 @@
     </Resources>
      
      <WebApplicationInfo>
-      <Id>a1d2f69a-d480-42b4-b9f3-a9abc66de29f</Id>
-      <Resource>api://localhost:3000/a1d2f69a-d480-42b4-b9f3-a9abc66de29f</Resource>
+      <Id>insert your app id here</Id>
+      <Resource>api://localhost:3000/insert your app id here</Resource>
       <Scopes>
         <Scope>User.Read</Scope> 
         <Scope>Group.Read.All</Scope> 
-	      <Scope>Group.ReadWrite.All</Scope>
+	<Scope>Group.ReadWrite.All</Scope>
         <Scope>profile</Scope>
       </Scopes>
     </WebApplicationInfo>
