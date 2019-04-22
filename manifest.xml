@@ -1,10 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<OfficeApp
-          xmlns="http://schemas.microsoft.com/office/appforoffice/1.1"
-          xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-          xmlns:bt="http://schemas.microsoft.com/office/officeappbasictypes/1.0"
-          xmlns:mailappor="http://schemas.microsoft.com/office/mailappversionoverrides/1.0"
-          xsi:type="MailApp">
+<OfficeApp xmlns="http://schemas.microsoft.com/office/appforoffice/1.1" 
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
+  xmlns:bt="http://schemas.microsoft.com/office/officeappbasictypes/1.0" 
+  xmlns:mailappor="http://schemas.microsoft.com/office/mailappversionoverrides/1.0" xsi:type="MailApp">
 
   <!-- Begin Basic Settings: Add-in metadata, used for all versions of Office unless override provided. -->
 
@@ -16,15 +14,15 @@
   <ProviderName>[Provider name]</ProviderName>
   <DefaultLocale>en-US</DefaultLocale>
   <!-- The display name of your add-in. Used on the store and various places of the Office UI such as the add-ins dialog. -->
-  <DisplayName DefaultValue="AngularAddin" />
+  <DisplayName DefaultValue="Angular Addin" />
   <Description DefaultValue="Angular Addin"/>
 
   <!-- Icon for your add-in. Used on installation screens and the add-ins dialog. -->
-  <IconUrl DefaultValue="https://localhost:3000/assets/icon-32.png" />
-  <HighResolutionIconUrl DefaultValue="https://localhost:3000/assets/hi-res-icon.png"/>
+  <IconUrl DefaultValue="https://angularaddineu.azurewebsites.net/assets/icon-32.png" />
+  <HighResolutionIconUrl DefaultValue="https://angularaddineu.azurewebsites.net/assets/hi-res-icon.png"/>
 
   <!--If you plan to submit this add-in to the Office Store, uncomment the SupportUrl element below-->
-  <SupportUrl DefaultValue="https://localhost:3000/assets/hi-res-icon.png" />
+  <SupportUrl DefaultValue="https://angularaddineu.azurewebsites.net/assets/hi-res-icon.png" />
 
   <!-- Domains that will be allowed when navigating. For example, if you use ShowTaskpane and then have an href link, navigation will only be allowed if the domain is on this list. -->
   <AppDomains>
@@ -45,7 +43,7 @@
   <FormSettings>
     <Form xsi:type="ItemRead">
       <DesktopSettings>
-        <SourceLocation DefaultValue="https://localhost:3000/index.html"/>
+        <SourceLocation DefaultValue="https://angularaddineu.azurewebsites.net/index.html"/>
         <RequestedHeight>250</RequestedHeight>
       </DesktopSettings>
     </Form>
@@ -59,81 +57,84 @@
   <DisableEntityHighlighting>false</DisableEntityHighlighting>
 
   <VersionOverrides xmlns="http://schemas.microsoft.com/office/mailappversionoverrides" xsi:type="VersionOverridesV1_0">
-    <Requirements>
-      <bt:Sets DefaultMinVersion="1.7">
-        <bt:Set Name="Mailbox" />
-      </bt:Sets>
-    </Requirements>
-    <Hosts>
-      <Host xsi:type="MailHost">
+    <VersionOverrides xmlns="http://schemas.microsoft.com/office/mailappversionoverrides/1.1" xsi:type="VersionOverridesV1_1">
+      <VersionOverrides xmlns="http://schemas.microsoft.com/office/mailappversionoverrides/1.2" xsi:type="VersionOverridesV1_1">
+        <Requirements>
+          <bt:Sets DefaultMinVersion="1.7">
+            <bt:Set Name="Mailbox" />
+          </bt:Sets>
+        </Requirements>
+        <Hosts>
+          <Host xsi:type="MailHost">
 
-        <DesktopFormFactor>
-          <!-- Location of the Functions that UI-less buttons can trigger (ExecuteFunction Actions). -->
-          <FunctionFile resid="functionFile" />
+            <DesktopFormFactor>
+              <!-- Location of the Functions that UI-less buttons can trigger (ExecuteFunction Actions). -->
+              <FunctionFile resid="functionFile" />
+              <SupportsSharedFolders>true</SupportsSharedFolders>
+              <!-- Message Read -->
+              <ExtensionPoint xsi:type="MessageReadCommandSurface">
+                <!-- Use the default tab of the ExtensionPoint or create your own with <CustomTab id="myTab"> -->
+                <OfficeTab id="TabDefault">
+                  <!-- Up to 6 Groups added per Tab -->
+                  <Group id="msgReadGroup">
+                    <Label resid="groupLabel" />
+                    <!-- Launch the add-in : task pane button -->
+                    <Control xsi:type="Button" id="msgReadOpenPaneButton">
+                      <Label resid="paneReadButtonLabel" />
+                      <Supertip>
+                        <Title resid="paneReadSuperTipTitle" />
+                        <Description resid="paneReadSuperTipDescription" />
+                      </Supertip>
+                      <Icon>
+                        <bt:Image size="16" resid="icon16" />
+                        <bt:Image size="32" resid="icon32" />
+                        <bt:Image size="80" resid="icon80" />
+                      </Icon>
+                      <Action xsi:type="ShowTaskpane">
+                        <SourceLocation resid="messageReadTaskPaneUrl" />
+                      </Action>
+                    </Control>
+                    <!-- Go to http://aka.ms/ButtonCommands to learn how to add more Controls: ExecuteFunction and Menu -->
+                  </Group>
+                </OfficeTab>
+              </ExtensionPoint>
+              <!-- Go to http://aka.ms/ExtensionPointsCommands to learn how to add more Extension Points: MessageRead, AppointmentOrganizer, AppointmentAttendee -->
+            </DesktopFormFactor>
+          </Host>
+        </Hosts>
 
-          <!-- Message Read -->
-          <ExtensionPoint xsi:type="MessageReadCommandSurface">
-            <!-- Use the default tab of the ExtensionPoint or create your own with <CustomTab id="myTab"> -->
-            <OfficeTab id="TabDefault">
-              <!-- Up to 6 Groups added per Tab -->
-              <Group id="msgReadGroup">
-                <Label resid="groupLabel" />
-                <!-- Launch the add-in : task pane button -->
-                <Control xsi:type="Button" id="msgReadOpenPaneButton">
-                  <Label resid="paneReadButtonLabel" />
-                  <Supertip>
-                    <Title resid="paneReadSuperTipTitle" />
-                    <Description resid="paneReadSuperTipDescription" />
-                  </Supertip>
-                  <Icon>
-                    <bt:Image size="16" resid="icon16" />
-                    <bt:Image size="32" resid="icon32" />
-                    <bt:Image size="80" resid="icon80" />
-                  </Icon>
-                  <Action xsi:type="ShowTaskpane">
-                    <SourceLocation resid="messageReadTaskPaneUrl" />
-                  </Action>
-                </Control>
-                <!-- Go to http://aka.ms/ButtonCommands to learn how to add more Controls: ExecuteFunction and Menu -->
-              </Group>
-            </OfficeTab>
-          </ExtensionPoint>
-          <!-- Go to http://aka.ms/ExtensionPointsCommands to learn how to add more Extension Points: MessageRead, AppointmentOrganizer, AppointmentAttendee -->
-        </DesktopFormFactor>
-      </Host>
-    </Hosts>
-
-    <Resources>
-      <bt:Images>
-        <bt:Image id="icon16" DefaultValue="https://localhost:3000/assets/icon-16.png"/>
-        <bt:Image id="icon32" DefaultValue="https://localhost:3000/assets/icon-32.png"/>
-        <bt:Image id="icon80" DefaultValue="https://localhost:3000/assets/icon-80.png"/>
-      </bt:Images>
-      <bt:Urls>
-        <bt:Url id="functionFile" DefaultValue="https://localhost:3000/function-file/function-file.html"/>
-        <bt:Url id="messageReadTaskPaneUrl" DefaultValue="https://localhost:3000/index.html"/>
-      </bt:Urls>
-      <bt:ShortStrings>
-        <bt:String id="groupLabel" DefaultValue="YO"/>
-        <bt:String id="customTabLabel"  DefaultValue="YO Tab"/>
-        <bt:String id="paneReadButtonLabel" DefaultValue="YO DemoAddin Angular"/>
-        <bt:String id="paneReadSuperTipTitle" DefaultValue="YO DemoAddin Angular"/>
-      </bt:ShortStrings>
-      <bt:LongStrings>
-        <bt:String id="paneReadSuperTipDescription" DefaultValue="Developed by Rui Miguel Silva (Using Yeoman+Angular+Typescript)."/>
-      </bt:LongStrings>
-    </Resources>
-     
-     <WebApplicationInfo>
-      <Id>a1d2f69a-d480-42b4-b9f3-a9abc66de29f</Id>
-      <Resource>api://localhost:3000/a1d2f69a-d480-42b4-b9f3-a9abc66de29f</Resource>
-      <Scopes>
-        <Scope>User.Read</Scope> 
-        <Scope>Group.Read.All</Scope> 
-	      <Scope>Group.ReadWrite.All</Scope>
-        <Scope>profile</Scope>
-      </Scopes>
-    </WebApplicationInfo>
-  
+        <Resources>
+          <bt:Images>
+            <bt:Image id="icon16" DefaultValue="https://angularaddineu.azurewebsites.net/assets/icon-16.png"/>
+            <bt:Image id="icon32" DefaultValue="https://angularaddineu.azurewebsites.net/assets/icon-32.png"/>
+            <bt:Image id="icon80" DefaultValue="https://angularaddineu.azurewebsites.net/assets/icon-80.png"/>
+          </bt:Images>
+          <bt:Urls>
+            <bt:Url id="functionFile" DefaultValue="https://angularaddineu.azurewebsites.net/function-file/function-file.html"/>
+            <bt:Url id="messageReadTaskPaneUrl" DefaultValue="https://angularaddineu.azurewebsites.net/index.html"/>
+          </bt:Urls>
+          <bt:ShortStrings>
+            <bt:String id="groupLabel" DefaultValue="Angular Addin"/>
+            <bt:String id="customTabLabel" DefaultValue="Angular Addin"/>
+            <bt:String id="paneReadButtonLabel" DefaultValue="Angular Addin"/>
+            <bt:String id="paneReadSuperTipTitle" DefaultValue="Angular Addin"/>
+          </bt:ShortStrings>
+          <bt:LongStrings>
+            <bt:String id="paneReadSuperTipDescription" DefaultValue="Developed by Rui Miguel Silva (Using Yeoman+Angular+Typescript)."/>
+          </bt:LongStrings>
+        </Resources>
+        
+        <WebApplicationInfo>
+          <Id>a1d2f69a-d480-42b4-b9f3-a9abc66de29f</Id>
+          <Resource>api://localhost:3000/a1d2f69a-d480-42b4-b9f3-a9abc66de29f</Resource>
+          <Scopes>
+            <Scope>User.Read</Scope>
+            <Scope>Group.Read.All</Scope>
+            <Scope>Group.ReadWrite.All</Scope>
+            <Scope>profile</Scope>
+          </Scopes>
+        </WebApplicationInfo>
+      </VersionOverrides>
+    </VersionOverrides>
   </VersionOverrides>
 </OfficeApp>
