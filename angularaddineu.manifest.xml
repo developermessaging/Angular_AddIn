@@ -14,15 +14,15 @@
     <ProviderName>CSS</ProviderName>
     <DefaultLocale>en-US</DefaultLocale>
     <!-- The display name of your add-in. Used on the store and various places of the Office UI such as the add-ins dialog. -->
-    <DisplayName DefaultValue="DEV Angular Addin" />
-    <Description DefaultValue="DEV Angular Addin"/>
+    <DisplayName DefaultValue="AngularAddinEU Angular Addin" />
+    <Description DefaultValue="AngularAddinEU Angular Addin"/>
 
     <!-- Icon for your add-in. Used on installation screens and the add-ins dialog. -->
-    <IconUrl DefaultValue="https://localhost:3000/assets/icon-32.png" />
-    <HighResolutionIconUrl DefaultValue="https://localhost:3000/assets/hi-res-icon.png"/>
+    <IconUrl DefaultValue="https://angularaddineu.azurewebsites.net/assets/icon-32.png" />
+    <HighResolutionIconUrl DefaultValue="https://angularaddineu.azurewebsites.net/assets/hi-res-icon.png"/>
 
     <!--If you plan to submit this add-in to the Office Store, uncomment the SupportUrl element below-->
-    <SupportUrl DefaultValue="https://localhost:3000/assets/hi-res-icon.png" />
+    <SupportUrl DefaultValue="https://angularaddineu.azurewebsites.net/assets/hi-res-icon.png" />
 
     <!-- Domains that will be allowed when navigating. For example, if you use ShowTaskpane and then have an href link, navigation will only be allowed if the domain is on this list. -->
     <AppDomains>
@@ -43,7 +43,7 @@
     <FormSettings>
         <Form xsi:type="ItemRead">
             <DesktopSettings>
-                <SourceLocation DefaultValue="https://localhost:3000/index.html"/>
+                <SourceLocation DefaultValue="https://angularaddineu.azurewebsites.net/index.html"/>
                 <RequestedHeight>250</RequestedHeight>
             </DesktopSettings>
         </Form>
@@ -242,14 +242,14 @@
 
             <Resources>
                 <bt:Images>
-                    <bt:Image id="icon16" DefaultValue="https://localhost:3000/assets/icon-16.png"/>
-                    <bt:Image id="icon32" DefaultValue="https://localhost:3000/assets/icon-32.png"/>
-                    <bt:Image id="icon80" DefaultValue="https://localhost:3000/assets/icon-80.png"/>
+                    <bt:Image id="icon16" DefaultValue="https://angularaddineu.azurewebsites.net/assets/icon-16.png"/>
+                    <bt:Image id="icon32" DefaultValue="https://angularaddineu.azurewebsites.net/assets/icon-32.png"/>
+                    <bt:Image id="icon80" DefaultValue="https://angularaddineu.azurewebsites.net/assets/icon-80.png"/>
                 </bt:Images>
                 <bt:Urls>
-                    <bt:Url id="functionFile" DefaultValue="https://localhost:3000/function-file/function-file.html"/>
-                    <bt:Url id="messageReadTaskPaneUrl" DefaultValue="https://localhost:3000/index.html"/>
-                    <bt:Url id="calendarComposeTaskPaneUrl" DefaultValue="https://localhost:3000/index.html"/>
+                    <bt:Url id="functionFile" DefaultValue="https://angularaddineu.azurewebsites.net/function-file/function-file.html"/>
+                    <bt:Url id="messageReadTaskPaneUrl" DefaultValue="https://angularaddineu.azurewebsites.net/index.html"/>
+                    <bt:Url id="calendarComposeTaskPaneUrl" DefaultValue="https://angularaddineu.azurewebsites.net/index.html"/>
                 </bt:Urls>
                 <bt:ShortStrings>
                     <bt:String id="groupLabel" DefaultValue="DEV Angular"/>
@@ -273,7 +273,7 @@
 
             <WebApplicationInfo>
                 <Id>a1d2f69a-d480-42b4-b9f3-a9abc66de29f</Id>
-                <Resource>api://localhost:3000/a1d2f69a-d480-42b4-b9f3-a9abc66de29f</Resource>
+                <Resource>api://angularaddineu.azurewebsites.net/a1d2f69a-d480-42b4-b9f3-a9abc66de29f</Resource>
                 <Scopes>
                     <Scope>User.Read</Scope>
                     <Scope>Group.Read.All</Scope>

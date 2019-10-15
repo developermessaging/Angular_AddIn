@@ -53,6 +53,7 @@
     <Rule xsi:type="RuleCollection" Mode="Or">
         <Rule xsi:type="ItemIs" ItemType="Message" FormType="ReadOrEdit" />
         <Rule xsi:type="ItemIs" ItemType="Appointment" FormType="ReadOrEdit" />
+
     </Rule>
     <DisableEntityHighlighting>true</DisableEntityHighlighting>
 

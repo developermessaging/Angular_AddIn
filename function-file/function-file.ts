@@ -6,7 +6,9 @@
 (() => {
   // The initialize function must be run each time a new page is loaded
   Office.initialize = () => {
+    var i:string = "1";
 
+    i = "test";
   };
 
   // Add any ui-less function here

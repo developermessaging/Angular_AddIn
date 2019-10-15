@@ -1,6 +1,7 @@
 {
     "compilerOptions": {
         "allowJs": true,
+        "noEmit": false,
         "target": "es5",
         "module": "es6",
         "moduleResolution": "node",

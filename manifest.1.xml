@@ -7,7 +7,7 @@
   <!-- Begin Basic Settings: Add-in metadata, used for all versions of Office unless override provided. -->
 
   <!-- IMPORTANT! Id must be unique for your add-in, if you reuse this manifest ensure that you change this id to a new GUID. -->
-  <Id>656de825-bf84-497b-ac6a-25136ae6ff0b</Id>
+  <Id>8014c6c5-2a55-41c9-b072-7b4fe55bdda2</Id>
 
   <!--Version. Updates from the store only get triggered if there is a version change. -->
   <Version>1.0.0.0</Version>
@@ -26,7 +26,7 @@
 
   <!-- Domains that will be allowed when navigating. For example, if you use ShowTaskpane and then have an href link, navigation will only be allowed if the domain is on this list. -->
   <AppDomains>
-    <AppDomain>https://angularaddineu.azurewebsites.net</AppDomain>
+    <AppDomain>AppDomain1</AppDomain>
     <AppDomain>AppDomain2</AppDomain>
     <AppDomain>AppDomain3</AppDomain>
   </AppDomains>
@@ -58,6 +58,7 @@
 
   <VersionOverrides xmlns="http://schemas.microsoft.com/office/mailappversionoverrides" xsi:type="VersionOverridesV1_0">
     <VersionOverrides xmlns="http://schemas.microsoft.com/office/mailappversionoverrides/1.1" xsi:type="VersionOverridesV1_1">
+      <!-- <VersionOverrides xmlns="http://schemas.microsoft.com/office/mailappversionoverrides/1.2" xsi:type="VersionOverridesV1_1"> -->
         <Requirements>
           <bt:Sets DefaultMinVersion="1.7">
             <bt:Set Name="Mailbox" />
@@ -67,7 +68,7 @@
           <Host xsi:type="MailHost">
 
             <DesktopFormFactor>
-              <SupportsSharedFolders>true</SupportsSharedFolders>  <!-- ATTENTION this tag has to come first -->
+              <SupportsSharedFolders>true</SupportsSharedFolders>
               <!-- Location of the Functions that UI-less buttons can trigger (ExecuteFunction Actions). -->
               <FunctionFile resid="functionFile" />
               <!-- Message Read -->
@@ -133,6 +134,7 @@
             <Scope>profile</Scope>
           </Scopes>
         </WebApplicationInfo>
+      <!-- </VersionOverrides> -->
     </VersionOverrides>
   </VersionOverrides>
 </OfficeApp>
