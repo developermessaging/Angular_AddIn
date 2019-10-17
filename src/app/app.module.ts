@@ -5,6 +5,7 @@ import { FormsModule } from "@angular/forms";
 import { CommonModule } from '@angular/common';
 import { HttpClientModule } from '@angular/common/http';
 
+import { AceEditorModule } from 'ng2-ace-editor';
 
 //Angular material from: https://material.angular.io/guide/getting-started
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
@@ -22,11 +23,13 @@ import other from './other/other.component';
 import context from './context/context.component';
 import newcase from './newcase/newcase.component';
 import excel from './excel/excel.component';
+import ews from './ews/ews.component';
+
 
 
 @NgModule({
-  declarations: [AppComponent, attachments, item, message, calendar, userprofile, diagnostics, other, context, newcase, excel],
-  imports: [BrowserModule, FormsModule, CommonModule, HttpClientModule,
+  declarations: [AppComponent, attachments, item, message, calendar, userprofile, diagnostics, other, context, newcase, excel, ews],
+  imports: [BrowserModule, FormsModule, CommonModule, HttpClientModule, AceEditorModule
               //MsalModule.forRoot( { clientID: "a1d2f69a-d480-42b4-b9f3-a9abc66de29f" } )
 
     //  ,MatButtonModule, MatCheckboxModule, MatTabsModule,

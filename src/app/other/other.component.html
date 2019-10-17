@@ -82,6 +82,15 @@
                     </span>
                 </div>
                 <div class="ms-Table-row">
+                    <span class="ms-Table-cell ms-fontWeight-semibold">Attendees</span>
+                    <span class="ms-Table-cell">
+                        <button class="ms-Button ms-Button--small" (click)="SetAttendees()">
+                            <!-- <span class="ms-Button-icon"><i class="ms-Icon ms-Icon--Add"></i></span> -->
+                            <span class="ms-Button-label">SetAttendees</span>
+                        </button>
+                    </span>
+                </div>
+                <div class="ms-Table-row">
                     <span class="ms-Table-cell ms-fontWeight-semibold">getCallbackTokenAsync</span>
                     <span class="ms-Table-cell"></span>
                 </div>
@@ -92,6 +101,21 @@
                 <div class="ms-Table-row">
                     <span class="ms-Table-cell ms-fontWeight-semibold">makeEwsRequestAsync</span>
                     <span class="ms-Table-cell"></span>
+                </div>
+                <div class="ms-Table-row">
+                    <span class="ms-Table-cell ms-fontWeight-semibold">Compatibility Setting</span>
+                    <span class="ms-Table-cell">
+
+                        <!-- 
+                            <div class="ms-CheckBox" *ngFor="let item of CreateRange(1.8)">
+                                <input tabindex="-1" type="checkbox" class="ms-CheckBox-input">
+                                    <label role="checkbox" class="ms-CheckBox-field" tabindex="0" aria-checked="false" name="checkboxa">
+                                    <span class="ms-Label">{{item}}</span> 
+                                </label>
+                            </div> 
+                        -->
+
+                    </span>
                 </div>
                 <div class="ms-Table-row">
                         <span class="ms-Table-cell ms-fontWeight-semibold">SetFormattedBody(Ahmad)</span>

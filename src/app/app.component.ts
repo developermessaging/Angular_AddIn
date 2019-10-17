@@ -17,10 +17,8 @@ export default class AppComponent implements OnInit {
     public AddinTitle: string = "DEMO Addin"
     public AddinSubTitle: string = "Developer Support for Messaging "
 
-    public CurrentItem: Office.Item = Office.context.mailbox.item;
-    public roamingsettings: Office.RoamingSettings;
-    public Attachments: Office.AttachmentDetails[] = Office.context.mailbox.item.attachments;
-
+    //public CurrentItem: Office.Item = Office.context.mailbox.item;
+   
     Operations: OperationsModel[] = [
         { id: 1, name: "View Item Properties" },
         { id: 2, name: "View Attachments " },
@@ -31,7 +29,9 @@ export default class AppComponent implements OnInit {
         { id: 7, name: "Other Operations" },
         { id: 8, name: "View Context" },
         { id: 9, name: "New Case Announce on Teams" },
-        { id: 10, name: "Excel ?" }
+        { id: 10, name: "Excel ?" },
+        { id: 11, name: "EWS" }
+
 
 
     ]
@@ -44,19 +44,8 @@ export default class AppComponent implements OnInit {
         //this.Terminal = "Terminal de testes";    
 
 
-        this.CurrentItem = Office.context.mailbox.item;
-        this.Attachments = Office.context.mailbox.item.attachments;
-
-
-        this.roamingsettings = Office.context.roamingSettings;
-
-        this.roamingsettings.set("Test", "Value for the roaming setting");
-        this.roamingsettings.saveAsync((asyncResult) => {
-            //this.Terminal = "callback result status " + asyncResult.status;
-        });
-
-
-
+        //this.CurrentItem = Office.context.mailbox.item;
+        
     }
 
     ngOnInit() {

@@ -31,6 +31,7 @@ export default class other {
 
     public RestId: string = "";
     public GetRestId(): string {
+        if(Office.context.mailbox.item.itemId == null) return "";
         var restType: Office.MailboxEnums.RestVersion;
         switch (this.SelectedGetRestTypeIndex.toString()) {
             case "1":
@@ -107,6 +108,17 @@ export default class other {
             });
     }
 
+    async SetAttendees(){
+        var x:string = "0";
+        Office.context.mailbox.item.requiredAttendees.setAsync(
+            ['CosmosRoom@devmsgpt.onmicrosoft.com', 'MercuryRoom@devmsgpt.onmicrosoft.com'] , this.callbackAttendees );
+        debugger;
+    }
+
+    async callbackAttendees(){
+        var x:string = "0";
+        debugger;
+    }
 
 
     public onChange(event): void {  // event will give you full breif of action
@@ -124,6 +136,13 @@ export default class other {
         }
     
 
+    // async createRange(number){
+    //     var items: number[] = [];
+    //     for(var i = 1; i <= number; i+= 0.1){
+    //        items.push(i);
+    //     }
+    //     return items;
+    //   }
 
     public copyMessage(val: string) {
         let selBox = document.createElement('textarea');

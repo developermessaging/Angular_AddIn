@@ -1,0 +1,27 @@
+<div class="ms-Grid-row">
+    <div id="appointment-props" class="ms-Grid-row ">
+        <div class="ms-Grid-col ms-u-sm12">
+            <h3 class="ms-font-l">Appointment-specific properties</h3>
+            <div class="ms-Table">
+                <div class="ms-Table-row">
+                    <textarea [(ngModel)]="Model.EWSPayload" name="EWSPayload" cols="40" rows="9"></textarea>
+                </div>
+                <div class="ms-Table-row">
+                    <h2>EWS Response</h2>>
+                </div>
+                <div>
+                    <ace-editor [(text)]="text" #editor style="height:150px;"></ace-editor>
+                </div>
+                <div class="ms-Table-row">
+                    <button class="ms-Button ms-Button--hero" (click)="CallEWS()">
+                        <span class="ms-Button-icon"><i class="ms-Icon ms-Icon--Add"></i></span>
+                        <span class="ms-Button-label">Call EWS Async</span>
+                    </button>
+                </div>
+                <div class="ms-Table-row">
+                    <pre lang="xml">{{Model.DisplayEWSResponse}}</pre>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

@@ -32,7 +32,7 @@ export default class attachments implements OnInit {
     Model: NewCaseModel = new NewCaseModel();
     //#endregion
 
-    constructor() {
+    constructor(private http:HttpClient) {
         this.CurrentItem = Office.context.mailbox.item;
     }
 
@@ -45,20 +45,26 @@ export default class attachments implements OnInit {
         /**
         * Call Team API
         */
+       var that=this;
+
        debugger;
         (Office.context as any).auth.getAccessTokenAsync(function (result) {
             var token: string = "InitialToken-Invalid";
+            
+            debugger;
 
             console.log("status=" + result.status);
             console.log("value= " + result.value);
-            console.log("error code= " + result.error.code);
-            console.log("message= " + result.error.message);
+            // console.log("error code= " + result.error.code);
+            // console.log("message= " + result.error.message);
 
             token = result.value;
 
-            http.get('https://graph.microsoft.com/v1.0/me/joinedTeams', {
-                headers: { 'Authorization': 'Bearer ' + token }
-            });
+            http.get('https://graph.microsoft.com/v1.0/me/joinedTeams', 
+            { headers: { 'Authorization': 'Bearer ' + token } }
+            ).subscribe( data=> { console.log(data) }, 
+                         error=> { console.log(error)}
+                       );
 
 
         });
