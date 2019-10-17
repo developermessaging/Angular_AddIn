@@ -1,5 +1,5 @@
 {
-  "name": "yo-addin",
+  "name": "angular-addin",
   "description": "<ul>\r <li>Clone or download this Repo </li>\r <li>On the working directory of your local copy, from command line type code . </li>\r <li>On the terminal window type npm install </li>\r <li>On the terminal window type npm run start </li>\r <li>Using internet explorer, browse https://localhost:3000/index.html, add certificate to trusted publishers </li>\r <li>In OWA, side load your addin with following URL: https://localhost:3000/manifest.xml </li>\r <li>start using the addin </li>\r   </ul>",
   "author": "",
   "version": "0.1.0",
