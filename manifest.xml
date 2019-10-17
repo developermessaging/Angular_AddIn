@@ -11,11 +11,11 @@
 
   <!--Version. Updates from the store only get triggered if there is a version change. -->
   <Version>1.0.0.0</Version>
-  <ProviderName>[Provider name]</ProviderName>
+  <ProviderName>Microsoft CSS</ProviderName>
   <DefaultLocale>en-US</DefaultLocale>
   <!-- The display name of your add-in. Used on the store and various places of the Office UI such as the add-ins dialog. -->
-  <DisplayName DefaultValue="Angular Addin" />
-  <Description DefaultValue="Angular Addin"/>
+  <DisplayName DefaultValue="AngularEU Addin" />
+  <Description DefaultValue="AngularEU Addin"/>
 
   <!-- Icon for your add-in. Used on installation screens and the add-ins dialog. -->
   <IconUrl DefaultValue="https://angularaddineu.azurewebsites.net/assets/icon-32.png" />
@@ -27,8 +27,8 @@
   <!-- Domains that will be allowed when navigating. For example, if you use ShowTaskpane and then have an href link, navigation will only be allowed if the domain is on this list. -->
   <AppDomains>
     <AppDomain>https://angularaddineu.azurewebsites.net</AppDomain>
-    <AppDomain>AppDomain2</AppDomain>
-    <AppDomain>AppDomain3</AppDomain>
+    <AppDomain>api://localhost:3000</AppDomain>
+    <AppDomain>https://localhost:3000</AppDomain>
   </AppDomains>
   <!--End Basic Settings. -->
 
@@ -125,7 +125,7 @@
         
         <WebApplicationInfo>
           <Id>a1d2f69a-d480-42b4-b9f3-a9abc66de29f</Id>
-          <Resource>api://localhost:3000/a1d2f69a-d480-42b4-b9f3-a9abc66de29f</Resource>
+          <Resource>api://angularaddineu.azurewebsites.net/a1d2f69a-d480-42b4-b9f3-a9abc66de29f</Resource>
           <Scopes>
             <Scope>User.Read</Scope>
             <Scope>Group.Read.All</Scope>
