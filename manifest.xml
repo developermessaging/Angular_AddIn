@@ -40,6 +40,7 @@
       <Set Name="Mailbox" MinVersion="1.3" />
     </Sets>
   </Requirements>
+  <!-- 
   <FormSettings>
     <Form xsi:type="ItemRead">
       <DesktopSettings>
@@ -48,6 +49,7 @@
       </DesktopSettings>
     </Form>
   </FormSettings>
+   -->
 
   <Permissions>ReadWriteMailbox</Permissions>
   <Rule xsi:type="RuleCollection" Mode="Or">
