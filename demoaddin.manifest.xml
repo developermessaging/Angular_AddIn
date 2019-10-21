@@ -33,13 +33,13 @@
         <SourceLocation DefaultValue="https://dsmsgeu-demoaddin.azurewebsites.net/MessageRead/MessageRead.html"/>
         <RequestedHeight>250</RequestedHeight>
       </DesktopSettings>
-      <TabletSettings>
-        <SourceLocation DefaultValue="https://dsmsgeu-demoaddin.azurewebsites.net/MessageRead/MessageRead.html" />
-        <RequestedHeight>450</RequestedHeight>
-      </TabletSettings>
-      <PhoneSettings>
-        <SourceLocation DefaultValue="https://dsmsgeu-demoaddin.azurewebsites.net/MessageRead/MessageRead.html" />
-      </PhoneSettings>
+        <TabletSettings>
+          <SourceLocation DefaultValue="https://dsmsgeu-demoaddin.azurewebsites.net/MessageRead/MessageRead.html" />
+          <RequestedHeight>450</RequestedHeight>
+        </TabletSettings>
+        <PhoneSettings>
+          <SourceLocation DefaultValue="https://dsmsgeu-demoaddin.azurewebsites.net/MessageRead/MessageRead.html" />
+        </PhoneSettings>
     </Form>
   </FormSettings>
 
