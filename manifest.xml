@@ -340,8 +340,8 @@
             <bt:String id="customTabLabel" DefaultValue="Angular Addin"/>
             <bt:String id="paneReadButtonLabel" DefaultValue="Angular Addin"/>
             <bt:String id="paneReadSuperTipTitle" DefaultValue="Angular Addin"/>
-            <bt:String id="paneComposeButtonLabel" DefaultValue="Demo Add-in"/>
-            <bt:String id="paneComposeSuperTipTitle" DefaultValue="Run Demo Add-in"/>
+            <bt:String id="paneComposeButtonLabel" DefaultValue="Angular Addin"/>
+            <bt:String id="paneComposeSuperTipTitle" DefaultValue="Angular Addin"/>
           </bt:ShortStrings>
           <bt:LongStrings>
             <bt:String id="paneReadSuperTipDescription" DefaultValue="Developed by Rui Miguel Silva (Using Yeoman+Angular+Typescript)."/>
