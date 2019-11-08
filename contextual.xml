@@ -1,0 +1,99 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<OfficeApp
+          xmlns="http://schemas.microsoft.com/office/appforoffice/1.1"
+          xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+          xmlns:bt="http://schemas.microsoft.com/office/officeappbasictypes/1.0"
+          xmlns:mailappor="http://schemas.microsoft.com/office/mailappversionoverrides/1.0"
+          xsi:type="MailApp">
+
+  <!-- Begin Basic Settings: Add-in metadata, used for all versions of Office unless override provided. -->
+
+  <!-- IMPORTANT! Id must be unique for your add-in, if you reuse this manifest ensure that you change this id to a new GUID. -->
+  <Id>32880b00-aafd-4c0e-ba8c-52d9039c28ee</Id>
+      
+  <!-- Version. Updates from the store only get triggered if there is a version change. -->
+  <Version>1.0.0.0</Version>
+  <ProviderName>Outlook Dev Center</ProviderName>
+  <DefaultLocale>en-US</DefaultLocale>
+  <!-- The display name of your add-in. Used on the store and various places of the Office UI such as the add-ins dialog. -->
+  <DisplayName DefaultValue="Messaging DEV case" />
+  <Description DefaultValue="A sample add-in that demonstrates contextual activation on a Regex match to show data from SP List."/>
+
+  <!-- Icon for your add-in. Used on installation screens and the add-ins dialog. -->
+  <IconUrl DefaultValue="https://localhost:8080/assets/icon-32.png" />
+  <HighResolutionIconUrl DefaultValue="https://localhost:8080/assets/hi-res-icon.png"/>
+  <!-- End Basic Settings. -->
+
+  <!-- Legacy settings -->
+  <!-- These values will be used for legacy clients that do not understand the -->
+  <!-- VersionOverrides schema. These values will be ignored by clients that do -->
+  <!-- understand VersionOverrides, with the exception of Permissions -->
+  <Hosts>
+    <Host Name="Mailbox" />
+  </Hosts>
+  <Requirements>
+    <Sets>
+      <Set Name="Mailbox" MinVersion="1.1" />
+    </Sets>
+  </Requirements>
+  <FormSettings>
+    <Form xsi:type="ItemRead">
+      <DesktopSettings>
+        <SourceLocation DefaultValue="https://microsoft-my.sharepoint.com/personal/catagh_microsoft_com/Lists/Backlog/DispForm.aspx?ID=516"/>
+        <RequestedHeight>250</RequestedHeight>
+      </DesktopSettings>
+    </Form>
+  </FormSettings>
+
+  <Permissions>ReadWriteItem</Permissions>
+  <!-- Note that this Rule element matches the Rule element inside the -->
+  <!-- DetectedEntity element below. This is so that older clients will be able -->
+  <!-- to activate the add-in on the same context. -->
+  <Rule xsi:type="RuleCollection" Mode="And">
+    <Rule xsi:type="ItemIs" ItemType="Message" FormType="Read" />
+    <Rule xsi:type="ItemHasRegularExpressionMatch" RegExName="8Digits" RegExValue="\d{8}" PropertyName="BodyAsHTML" />
+  </Rule>
+  <DisableEntityHighlighting>false</DisableEntityHighlighting>
+
+  <VersionOverrides xmlns="http://schemas.microsoft.com/office/mailappversionoverrides" xsi:type="VersionOverridesV1_0">
+    <!-- VersionOverrides for the v1.1 schema -->
+    <VersionOverrides xmlns="http://schemas.microsoft.com/office/mailappversionoverrides/1.1" xsi:type="VersionOverridesV1_1">
+      <Requirements>
+        <bt:Sets DefaultMinVersion="1.5">
+          <bt:Set Name="Mailbox" />
+        </bt:Sets>
+      </Requirements>
+      <Hosts>
+        <Host xsi:type="MailHost">
+
+          <DesktopFormFactor>
+            <!-- DetectedEntity -->
+            <ExtensionPoint xsi:type="DetectedEntity">
+              <Label resid="contextLabel" />
+              <SourceLocation resid="detectedEntityURL" />
+              <Rule xsi:type="RuleCollection" Mode="And">
+                 <Rule xsi:type="ItemIs" ItemType="Message" />
+                <Rule xsi:type="ItemHasRegularExpressionMatch" RegExName="CaseNumber" RegExValue="\d{8}" PropertyName="BodyAsHTML" Highlight="none"/>
+				<Rule xsi:type="ItemHasRegularExpressionMatch" RegExName="CaseNumbertext" RegExValue="\d{8}" PropertyName="BodyAsPlaintext" Highlight="all"/>
+              </Rule>
+            </ExtensionPoint>
+          </DesktopFormFactor>
+        </Host>
+      </Hosts>
+
+      <Resources>
+        <bt:Images>
+          <bt:Image id="icon16" DefaultValue="https://microsoft-my.sharepoint.com:443/User%20Photos/Profile%20Pictures/catagh_microsoft_com_SThumb.jpg"/>
+          <bt:Image id="icon32" DefaultValue="https://microsoft-my.sharepoint.com:443/User%20Photos/Profile%20Pictures/catagh_microsoft_com_SThumb.jpg"/>
+          <bt:Image id="icon80" DefaultValue="https://microsoft-my.sharepoint.com:443/User%20Photos/Profile%20Pictures/catagh_microsoft_com_SThumb.jpg"/>
+        </bt:Images>
+        <bt:Urls>
+          <bt:Url id="detectedEntityURL" DefaultValue="https://microsoft-my.sharepoint.com/personal/catagh_microsoft_com/Lists/Backlog/DispForm.aspx?ID=516"/>
+        </bt:Urls>
+        <bt:ShortStrings>
+          <bt:String id="contextLabel" DefaultValue="CSS RAVE Case Number Detected"/>
+        </bt:ShortStrings>
+      </Resources>
+    </VersionOverrides>
+  </VersionOverrides>
+</OfficeApp>

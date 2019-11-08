@@ -9,39 +9,36 @@
                 </div>
                 <div class="ms-Table-row">
                     <span class="ms-Table-cell ms-fontWeight-semibold">end</span>
-                    <span class="ms-Table-cell">{{ CurrentItem.end  | date:'dd-MM-yyyy HH:mm' }}</span>
+                    <span class="ms-Table-cell">{{ this.end }}</span>
                 </div>
                 <div class="ms-Table-row">
                     <span class="ms-Table-cell ms-fontWeight-semibold">location</span>
-                    <span class="ms-Table-cell">{{ CurrentItem.location }}</span>
+                    <span class="ms-Table-cell">{{ CurrentItem != null ? CurrentItem.location : ""}}</span>
                 </div>
                 <div class="ms-Table-row">
                     <span class="ms-Table-cell ms-fontWeight-semibold">normalizedSubject</span>
-                    <span class="ms-Table-cell">{{ CurrentItem.normalizedSubject }}</span>
+                    <span class="ms-Table-cell">{{ CurrentItem != null ? CurrentItem.normalizedSubject : "" }}</span>
                 </div>
                 <div class="ms-Table-row">
                     <span class="ms-Table-cell ms-fontWeight-semibold">optionalAttendees</span>
-                    <span class="ms-Table-cell">{{ CurrentItem.optionalAttendees }}</span>
+                    <span class="ms-Table-cell">{{ CurrentItem != null ? CurrentItem.optionalAttendees : "" }}</span>
                 </div>
                 <div class="ms-Table-row">
                     <span class="ms-Table-cell ms-fontWeight-semibold">organizer</span>
-                    <span class="ms-Table-cell">{{ CurrentItem.organizer }}</span>
+                    <span class="ms-Table-cell">{{ this.organizer }}</span>
                 </div>
                 <div class="ms-Table-row">
                     <span class="ms-Table-cell ms-fontWeight-semibold">requiredAttendees</span>
-                    <span class="ms-Table-cell">{{ this.splitArray( CurrentItem.requiredAttendees ) }}</span>
-                </div>
-                <div class="ms-Table-row">
-                    <span class="ms-Table-cell ms-fontWeight-semibold">resources</span>
-                    <span class="ms-Table-cell">{{ CurrentItem.resources }}</span>
+                    <!-- <span class="ms-Table-cell">{{ this.splitArray( CurrentItem.requiredAttendees ) }}</span> -->
+                    <span class="ms-Table-cell">{{ this.requiredAttendees }}</span>
                 </div>
                 <div class="ms-Table-row">
                     <span class="ms-Table-cell ms-fontWeight-semibold">start</span>
-                    <span class="ms-Table-cell">{{ CurrentItem.start  | date:'dd-MM-yyyy HH:mm' }}</span>
+                    <span class="ms-Table-cell">{{ this.start }}</span>
                 </div>
                 <div class="ms-Table-row">
                     <span class="ms-Table-cell ms-fontWeight-semibold">subject</span>
-                    <span class="ms-Table-cell">{{ CurrentItem.subject }}</span>
+                    <span class="ms-Table-cell">{{ CurrentItem != null ? CurrentItem.subject : "" }}</span>
                 </div>
             </div>
         </div>
