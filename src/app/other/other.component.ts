@@ -108,6 +108,19 @@ export default class other {
             });
     }
 
+
+    async displayDialogAsync() {
+        debugger;
+        Office.context.ui.displayDialogAsync("https://forms.office.com/Pages/ResponsePage.aspx?id=26HulZLRrESMASNUupPx8VjUibkIkxFEsoqd86bMiAxUQjhYRjBOOEVNN0FMWTdST1dOOUhFUEpQUC4u&embed=true",
+            { height: 60, width: 40, promptBeforeOpen: false }, 
+            function (result) {
+                debugger;
+                var _dlg = result.value;
+                //_dlg.addEventHandler(Office.EventType.DialogMessageReceived, processMessage);
+            });
+
+    }
+
     async SetAttendees(){
         var x:string = "0";
         Office.context.mailbox.item.requiredAttendees.setAsync(
