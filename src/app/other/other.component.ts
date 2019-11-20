@@ -115,7 +115,7 @@ export default class other {
             { height: 60, width: 40, promptBeforeOpen: false }, 
             function (result) {
                 debugger;
-                var _dlg = result.value;
+                var _dlg = result.value; 
                 //_dlg.addEventHandler(Office.EventType.DialogMessageReceived, processMessage);
             });
 
