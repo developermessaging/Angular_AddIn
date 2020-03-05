@@ -29,6 +29,10 @@
     <AppDomain>https://angularaddineu.azurewebsites.net</AppDomain>
     <AppDomain>api://localhost:3000</AppDomain>
     <AppDomain>https://localhost:3000</AppDomain>
+
+    <AppDomain>https://unitedstates.smartscreen.microsoft.com</AppDomain>
+    <AppDomain>https://login.windows.net</AppDomain>
+    <AppDomain>https://login.microsoftonline.com</AppDomain>
   </AppDomains>
   <!--End Basic Settings. -->
 
