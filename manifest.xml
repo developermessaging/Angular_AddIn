@@ -33,6 +33,8 @@
     <AppDomain>https://unitedstates.smartscreen.microsoft.com</AppDomain>
     <AppDomain>https://login.windows.net</AppDomain>
     <AppDomain>https://login.microsoftonline.com</AppDomain>
+    <AppDomain>https://msft.sts.microsoft.com</AppDomain>
+
   </AppDomains>
   <!--End Basic Settings. -->
 
